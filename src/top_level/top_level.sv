@@ -6,8 +6,8 @@ module top_level
     import cnn_config_pkg::*;
     import rmse_pkg::*;
 # (
-    parameter string MEM_FILE       = "mem_files/imu_anomaly_example.mem",
-    parameter string SQRT_MEM_FILE  = "mem_files/sqrt_table.mem",
+    parameter string MEM_FILE       = "imu_anomaly_example.mem",
+    parameter string SQRT_MEM_FILE  = "sqrt_table.mem",
     parameter int    NUM_ROWS       = 600,
     parameter int    RESET_CYCLES   = 16,
     parameter int    DRAIN_CYCLES   = 256,

@@ -4,9 +4,6 @@ module sync_fifo
 # (
     parameter           FIFO_DEPTH      = 45,
     parameter           DATA_WIDTH      = 16,
-    /* verilator lint_off UNUSEDPARAM */
-    parameter string    RAM_STYLE       = "block",
-    /* verilator lint_on UNUSEDPARAM */
     localparam          ADDR_WIDTH      = $clog2(FIFO_DEPTH + 1)
 ) (
     input wire                      clk,
@@ -20,7 +17,7 @@ module sync_fifo
 );  
     localparam ADDR_MAX = ADDR_WIDTH'(FIFO_DEPTH);
 
-    (* ram_style = RAM_STYLE *) logic [DATA_WIDTH-1:0] mem [FIFO_DEPTH:0];
+    (* ram_style = "block" *) logic [DATA_WIDTH-1:0] mem [FIFO_DEPTH:0];
 
     logic [ADDR_WIDTH-1:0]                      rd_ptr;
     
